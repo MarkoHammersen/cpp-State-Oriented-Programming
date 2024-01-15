@@ -62,6 +62,7 @@ public:
     Hsm(char const *name, EvtHndlr topHndlr);                       /* Ctor */
     void onStart();                        /* enter and start the top state */
     void onEvent(Msg const *msg);                 /* "state machine engine" */
+    char const* getName(){return curr->name;};
 protected:
     unsigned char toLCA_(State *target);
     void exit_(unsigned char toLca);
