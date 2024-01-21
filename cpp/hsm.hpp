@@ -43,6 +43,7 @@ class State {
     char const *name;
 public:
     State(char const *name, State *super, EvtHndlr hndlr);
+    State(){};
 private:
     Msg const *onEvent(Hsm *ctx, Msg const *msg) {
         return (ctx->*hndlr)(msg);
